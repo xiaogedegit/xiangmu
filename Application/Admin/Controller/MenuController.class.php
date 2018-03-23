@@ -2,7 +2,7 @@
 namespace Admin\Controller;
 use Think\Controller;
 
-class IndexController extends Controller{
+class MenuController extends Controller{
     public function index(){
        
         $this->display('index');
@@ -12,3 +12,5 @@ class IndexController extends Controller{
     
 
 }
+
+?>

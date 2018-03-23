@@ -9,9 +9,9 @@
 <LINK rel="Bookmark" href="/favicon.ico" >
 <LINK rel="Shortcut Icon" href="/favicon.ico" />
 <!--[if lt IE 9]>
-<script type="text/javascript" src="<?php echo Admin_PATH;?>/lib/html5.js"></script>
-<script type="text/javascript" src="<?php echo Admin_PATH;?>/lib/respond.min.js"></script>
-<script type="text/javascript" src="<?php echo Admin_PATH;?>/lib/PIE_IE678.js"></script>
+<script type="text/javascript" src="{:Admin_PATH}/lib/html5.js"></script>
+<script type="text/javascript" src="{:Admin_PATH}/lib/respond.min.js"></script>
+<script type="text/javascript" src="{:Admin_PATH}/lib/PIE_IE678.js"></script>
 <![endif]-->
 <link href="<?php echo Admin_PATH;?>/css/H-ui.min.css" rel="stylesheet" type="text/css" />
 <link href="<?php echo Admin_PATH;?>/css/H-ui.admin.css" rel="stylesheet" type="text/css" />
@@ -22,9 +22,9 @@
 <script type="text/javascript" src="http://lib.h-ui.net/DD_belatedPNG_0.0.8a-min.js" ></script>
 <script>DD_belatedPNG.fix('*');</script>
 <![endif]-->
-<title>H-ui.admin v2.3</title>
-<meta name="keywords" content="H-ui.admin v2.3,H-ui网站后台模版,后台模版下载,后台管理系统模版,HTML后台模版下载">
-<meta name="description" content="H-ui.admin v2.3，是一款由国人开发的轻量级扁平化网站后台模板，完全免费开源的网站后台管理系统模版，适合中小型CMS后台系统。">
+<title>CMS</title>
+<meta name="keywords" content="网站后台">
+<meta name="description" content="网站后台">
 </head>
 <body>
 <header class="Hui-header cl"> <a class="Hui-logo l" title="H-ui.admin v2.3" href="/">H-ui.admin</a> <a class="Hui-logo-m l" href="/" title="H-ui.admin">H-ui</a> <span class="Hui-subtitle l">V2.3</span>
@@ -49,7 +49,7 @@
 				<li><a href="#">退出</a></li>
 			</ul>
 		</li>
-		<li id="Hui-msg"> <a href="#" title="消息"><span class="badge badge-danger">1</span><i class="Hui-iconfont" style="font-size:18px">&#xe68a;</i></a> </li>
+<!-- 		<li id="Hui-msg"> <a href="#" title="消息"><span class="badge badge-danger">1</span><i class="Hui-iconfont" style="font-size:18px">&#xe68a;</i></a> </li> -->
 		<li id="Hui-skin" class="dropDown right dropDown_hover"><a href="javascript:;" title="换肤"><i class="Hui-iconfont" style="font-size:18px">&#xe62a;</i></a>
 			<ul class="dropDown-menu radius box-shadow">
 				<li><a href="javascript:;" data-val="default" title="默认（黑色）">默认（黑色）</a></li>
@@ -65,6 +65,9 @@
 <aside class="Hui-aside">
 	<input runat="server" id="divScrollValue" type="hidden" value="" />
 	<div class="menu_dropdown bk_2">
+		<dl id="menu-list">
+			<a href="<?php echo U('Menu/index');?>"><dt><i class="Hui-iconfont">&#xe616;</i>菜单管理</dt></a>
+		</dl>
 		<dl id="menu-article">
 			<dt><i class="Hui-iconfont">&#xe616;</i> 资讯管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
@@ -74,7 +77,7 @@
 			</dd>
 		</dl>
 		<dl id="menu-picture">
-			<dt><i class="Hui-iconfont">&#xe613;</i> 图片管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dt><i class="Hui-iconfont">&#xe613;</i>图片管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
 					<li><a _href="picture-list.html" href="javascript:void(0)">图片管理</a></li>
@@ -91,7 +94,7 @@
 				</ul>
 			</dd>
 		</dl>
-		<!--<dl id="menu-page">
+		<dl id="menu-page">
 			<dt><i class="Hui-iconfont">&#xe626;</i> 页面管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
@@ -99,7 +102,7 @@
 					<li><a _href="page-flinks.html" href="javascript:void(0)">友情链接</a></li>
 				</ul>
 			</dd>
-		</dl>-->
+		</dl>
 		<dl id="menu-comments">
 			<dt><i class="Hui-iconfont">&#xe622;</i> 评论管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
@@ -109,7 +112,7 @@
 				</ul>
 			</dd>
 		</dl>
-		<!--<dl id="menu-order">
+		<dl id="menu-order">
 			<dt><i class="Hui-iconfont">&#xe63a;</i> 财务管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
@@ -118,7 +121,7 @@
 					<li><a _href="invoice-list.html" href="javascript:void(0)">发票管理</a></li>
 				</ul>
 			</dd>
-		</dl>-->
+		</dl>
 		<dl id="menu-member">
 			<dt><i class="Hui-iconfont">&#xe60d;</i> 会员管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
@@ -176,7 +179,7 @@
 	<div id="Hui-tabNav" class="Hui-tabNav">
 		<div class="Hui-tabNav-wp">
 			<ul id="min_title_list" class="acrossTab cl">
-				<!-- <li class="active"><span title="我的桌面" data-href="welcome.html">我的桌面</span><em></em></li> -->
+				<li class="active"><span title="我的桌面" data-href="welcome.html">我的桌面</span><em></em></li>
 			</ul>
 		</div>
 		<div class="Hui-tabNav-more btn-group"><a id="js-tabNav-prev" class="btn radius btn-default size-S" href="javascript:;"><i class="Hui-iconfont">&#xe6d4;</i></a><a id="js-tabNav-next" class="btn radius btn-default size-S" href="javascript:;"><i class="Hui-iconfont">&#xe6d7;</i></a></div>
@@ -188,10 +191,10 @@
 		</div>
 	</div>
 </section>
-<script type="text/javascript" src="<?php echo Admin_PATH;?>/lib/jquery/1.9.1/jquery.min.js"></script> 
-<script type="text/javascript" src="<?php echo Admin_PATH;?>/lib/layer/1.9.3/layer.js"></script> 
-<script type="text/javascript" src="<?php echo Admin_PATH;?>/js/H-ui.js"></script> 
-<script type="text/javascript" src="<?php echo Admin_PATH;?>/js/H-ui.admin.js"></script> 
+<script type="text/javascript" src="{:Admin_PATH}/lib/jquery/1.9.1/jquery.min.js"></script> 
+<script type="text/javascript" src="{:Admin_PATH}/lib/layer/1.9.3/layer.js"></script> 
+<script type="text/javascript" src="{:Admin_PATH}/js/H-ui.js"></script> 
+<script type="text/javascript" src="{:Admin_PATH}/js/H-ui.admin.js"></script> 
 <script type="text/javascript">
 /*资讯-添加*/
 function article_add(title,url){

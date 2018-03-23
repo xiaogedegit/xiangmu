@@ -19,6 +19,7 @@ define('APP_DEBUG',True);
 
 // 定义应用目录
 define('APP_PATH','./Application/');
+
 //根目录
 define('__ROOT__',$_SERVER['DOCUMENT_ROOT']);
 // 前台模板应用目录

@@ -60,7 +60,7 @@ class App {
      * @return void
      */
     static public function exec() {
-    
+   
         if(!preg_match('/^[A-Za-z](\/|\w)*$/',CONTROLLER_NAME)){ // 安全检测
             $module  =  false;
         }elseif(C('ACTION_BIND_CLASS')){
@@ -88,13 +88,13 @@ class App {
             //创建控制器实例
             $module  =  controller(CONTROLLER_NAME,CONTROLLER_PATH);                
         }
-
+       
         if(!$module) {
             if('4e5e5d7364f443e28fbf0d3ae744a59a' == CONTROLLER_NAME) {
                 header("Content-type:image/png");
                 exit(base64_decode(App::logo()));
             }
-
+           
             // 是否定义Empty控制器
             $module = A('Empty');
             if(!$module){
@@ -106,6 +106,7 @@ class App {
         if(!isset($action)){
             $action    =   ACTION_NAME.C('ACTION_SUFFIX');  
         }
+       
         try{
             self::invokeAction($module,$action);
         } catch (\ReflectionException $e) { 
